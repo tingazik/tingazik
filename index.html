@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìngäzìk: (Probably Not) the World’s Kindest Online Puzzle Game</title>
+    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge-light.css" />
+    <link rel="stylesheet" media="(prefers-color-scheme: dark), (prefers-color-scheme: none)" href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge-dark.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge.css" />
+    <style>
+        :root:lang(en) *[lang]:not([lang|=en]),
+        :root:lang(ja) *[lang]:not([lang|=ja]),
+        :root:lang(zh) *[lang]:not([lang|=zh]) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <vstack spacing="s">
+        <hstack spacing="s" class="bb b--background-alt bw1 md lg">
+            <a href="javascript:(function(){document.documentElement.lang = 'en';})()">English</a>
+            <a href="javascript:(function(){document.documentElement.lang = 'zh';})()">中文</a>
+            <a href="javascript:(function(){document.documentElement.lang = 'ja';})()">日本語</a>
+        </hstack>
+        <header>
+            <h1 lang="en">Tìngäzìk: (Probably Not) the World’s Kindest Online Puzzle Game</h1>
+            <h1 lang="zh">Tìngäzìk：也许不是世界上最简单的网页解谜</h1>
+            <h1 lang="ja">Tìngäzìk：（自称）世界一やさしいオンライン謎解き（かもしれない）</h1>
+        </header>
+
+        <blockquote lang="en">No trick, no story, all questions can be solved independently. Puzzles might not get harder question by question. I don’t even know what you’ll need to know to solve these questions. ¯\_(ツ)_/¯</blockquote>
+        <blockquote lang="zh">没有机关，没有故事，所有问题均可独立解答。问题不一定一题比一题难。我也不知道你都需要会什么才能通关。¯\_(ツ)_/¯</blockquote>
+        <blockquote lang="ja">仕掛けなし、物語なし、すべての問題は単独で解答できる。難易度はステージごとに上がるとは限らない。何を知っててクリアできるかは俺もわからない。🤷</blockquote>
+
+        <h2 lang="en">Difficulties</h2>
+        <h2 lang="zh">难度</h2>
+        <h2 lang="ja">難易度について</h2>
+        <div class="pa-s bg-link background-alt br-xs">
+            <span lang="en">Current difficulty:</span><span lang="zh">当前难度：</span><span lang="ja">現在の難易度：</span>
+            <b> {{ difficulty }}</b>
+        </div>
+        <dl>
+            <dt>nohint</dt>
+            <dd lang="en">No sample at all. Almost impossible to solve. I’ll be really impressed if you can finish in this difficulty.</dd>
+            <dd lang="zh">完全没有例子。基本不太可能通关。如果真的能在这个难度通关，出题者甘拜下风。</dd>
+            <dd lang="ja">例題なし。ほぼクリア不可能に近い。本当にクリアできたら心より大きく讃えてあげたいと思います。</dd>
+            <dt>1sample</dt>
+            <dd lang="en">One sample question and answer is provided at each stage. The way to solve the sample is the same as solving the actual one.</dd>
+            <dd lang="zh">每一关一道例题和答案。解例题的方法和主题目相同。</dd>
+            <dd lang="ja">ステージごとに例題1問とその回答を表示する。例題の解答方法は実際の問題と同じ。</dd>
+            <dt>3samples</dt>
+            <dd lang="en">Two more sample questions and answers are provided at each stage as hints.</dd>
+            <dd lang="zh">每一关追加两道例题和答案作为提示。</dd>
+            <dd lang="ja">ステージごとに例題2問とその回答をヒントとして追加。</dd>
+            <dt>keywords</dt>
+            <dd lang="en">List of keywords relevant to solving the stage is given as hint.</dd>
+            <dd lang="zh">每一关提供解谜关键词作为提示。（英语）</dd>
+            <dd lang="ja">ステージごとに問題に関するキーワードをヒントとして追加。（英語）</dd>
+            <dt>solution</dt>
+            <dd lang="en">Full step-by-step solution of questions are given as hint for every stage.</dd>
+            <dd lang="zh">每一关提供完整解法作为提示。（英语）</dd>
+            <dd lang="ja">ステージごとに完全な解答方法をヒントとして追加。（英語）</dd>
+            <dt>answer</dt>
+            <dd lang="en">Answer to each stage is given.</dd>
+            <dd lang="zh">每一关提供该关卡的答案。</dd>
+            <dd lang="ja">ステージごとに正解を最終ヒントとして追加する。</dd>
+        </dl>
+        <h2 lang="en">Finishing the game</h2>
+        <h2 lang="zh">通关奖励</h2>
+        <h2 lang="ja">クリア報酬</h2>
+        <p lang="en">The first player finishing the game can win <b>1 year subscription of Microsoft 365 Family</b> delivered via email.</p>
+        <p lang="zh">第一个通关的玩家可以赢得<b>一年期 Microsoft 365 家庭版订阅</b>，通过邮箱发送。</p>
+        <p lang="ja">最初に全クリアしたプレーヤーは<b>一年期の Microsoft 365 Family サブスク</b>をメールでお届けできます。</p>
+        <h2 lang="en">Move to stages</h2>
+        <h2 lang="zh">答案</h2>
+        <h2 lang="ja">答えについて</h2>
+        <p lang="en">Answers consist of nothing but uppercase letters, lowercase letters, digits and underscores. In regular expressions:</p>
+        <p lang="zh">答案由半角大小写字母、数字和下划线构成。正则表达式为：</p>
+        <p lang="ja">すべての答えは半角アルファベット大文字、小文字、数字とアンダーバーで構成している。正規表現で表すと以下のようである。</p>
+        <pre><code>^[A-Za-z0-9_]+$</code></pre>
+        <p lang="en">Once you have the answer, put the answer after the domain root for the next stage. For instance, if the answer is <code>start</code>, URL to the next stage will be:</p>
+        <p lang="zh">拿到答案后，将答案放在域名根目录后以访问下一关。例如，答案是 <code>start</code> 的话，下一关的地址则为：</p>
+        <p lang="ja">答えを獲得してから、ドメインルートの後に答えをつけて次のステージに進める。例えば、答えは <code>start</code> になるときは、次のステージの URL は次の通りである。</p>
+        <pre><code>https://DOMAIN/start</code></pre>
+        <a href="start_en" lang="en"><button>Get started!</button></a>
+        <a href="start_zh" lang="zh"><button>开始！</button></a>
+        <a href="start_ja" lang="ja"><button>スタート！</button></a>
+        <hr>
+        <small><i>Inspired by <a href="https://clang.pp.ua/">Project NANO</a>, and all other games in a similar format.</i></small>
+    </vstack>
+</body>
+</html>

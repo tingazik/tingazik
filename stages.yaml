@@ -1,0 +1,73 @@
+# difficulty: nohint
+difficulty: answer
+stages:
+- name: start_en
+  answer: first
+- name: start_ja
+  answer: first
+- name: start_zh
+  answer: first
+- name: roman  # easy
+  answer: "400"
+- name: barcode  # easy
+  answer: cascade
+- name: bf
+  answer: turing_machine
+- name: 3pluswhat
+  answer: 8G2J2H9H
+- name: cannot_say_cannot_say_turn # math
+  answer: "69324642199981295394350956544"
+- name: nogoubei  # medium # chinese
+  answer: 7CA4
+- name: nemeth  # math
+  answer: "3_1415927"
+- name: sijiao  # chinese
+  answer: "10804_44112_00732_44806"
+- name: oeis  # math
+  answer: A133058
+- name: ids  # unicode # chinese
+  answer: 2FF0_6C35_233B3
+- name: selfref  # math
+  answer: "507088142"
+- name: unicode_new_char  # unicode
+  answer: 1FBB9_1FBBA_1FBC1_1FBC2_1FBC3_1FBB2_1FBB3
+- name: uni_code  # unicode # 2d code
+  answer: this_pdf_is_not_that_pdf
+- name: hentaigana  # unicode
+  answer: ronosekiwo
+- name: unicat  # unicode
+  answer: SmLoLlNdSoNdScLlNlLoLu
+- name: numero  # unicode?
+  answer: "_47932_48"
+- name: hajimetenooto  # morse
+  answer: HAJIMETENOOTO
+- name: pikachu_cry  # morse # pokemon
+  answer: pikachu
+- name: pikachu_english  # pokemon
+  answer: congratulations
+- name: decompress  # pokemon
+  answer: Henceforth
+- name: lenavi_table  # navi
+  answer: mrrvomum
+- name: lifya_lenavi  # navi # conlang
+  answer: to_be_or_not_to_be_that_is_the_question
+- name: solresol  # conlang
+  answer: never_gonna_give_you_up_never_gonna_let_you_down
+- name: xsampa  # english
+  answer: circumstances
+- name: google_ja_apr1
+  answer: m9
+- name: ivs  # chinese # unicode
+  answer: "2021_02_12"
+- name: unkyouonji  # chinese # japanese
+  answer: ta1men2suo3you3de0she4bei4he2yi2qi4fang3fu2dou1shi4you3sheng1ming4de0
+- name: nobashibou  # japanese
+  answer: user_interface
+- name: heiti
+  answer: PingFang_SC
+- name: iconify  # hard
+  answer: ic_octicon_fa_fluent_twemoji
+- name: cosmo  # hard
+  answer: "302029"
+- name: congrats
+  answer: null

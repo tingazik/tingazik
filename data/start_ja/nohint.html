@@ -1,0 +1,38 @@
+<h1>ヒントをどうやってゲットできるの？</h1>
+<p>現在の難易度によって、1つのステージでは複数のヒントを獲得することができます。</p>
+<p>ヒントをゲットするには以下の手順を従ってください：</p>
+<ol>
+    <li>ページのソースコードをゲットする。</li>
+    <li>数字、大文字と小文字の ABCDEF 以外の文字をを削除する。</li>
+    <li>この文字列を 16 進数のデータとして認識する。</li>
+    <li>文字列の長さが奇数の場合は、最後に <code>0</code> をつける。</li>
+    <li>このデータの MD5 Hash を計算する。</li>
+    <li>計算結果を小文字 16 進数に変換する。</li>
+    <li>変換結果を「答え」にして、ヒントをゲットする。</li>
+</ol>
+<p>Hash を計算するには、以下のツールを利用できます。</p>
+<ul>
+    <li>ページのソースコードを<a
+            href="https://gchq.github.io/CyberChef/#recipe=Filter('Nothing%20(separate%20chars)','%5B0-9a-fA-F%5D',false)Conditional_Jump('%5E(..)%2B$',false,'Skip',10)Find_/_Replace(%7B'option':'Regex','string':'$'%7D,'0',true,false,true,false)Label('Skip')From_Hex('Auto')MD5()">この
+            CyberChef レシピー</a>の入力欄にコピペする。</li>
+    <li>
+        macOS shell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
+        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5</code></pre>
+    </li>
+    <li>
+        (GNU/)Linux shell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
+        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5sum</code></pre>
+    </li>
+    <li>
+        PowerShell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
+        <pre><code>$d = (Invoke-WebRequest "<u>https://URL/answer</u>").Content -Replace "[^0-9a-fA-F]", ""; if ($d.Length % 2 -eq 1) {$d += "0"}; $d = $d -Split '(?<=\G..)(?=.)' | ForEach-Object {[byte]::Parse($_,'HexNumber')}; $d = New-Object System.IO.MemoryStream(, $d); (Get-FileHash -InputStream $d -Algorithm md5).Hash.ToLower()</code></pre>
+    </li>
+</ul>
+<p>注意：この手順は全ステージの最初ヒントと追加ヒントをゲットすることができる。
+   404 エラーが表示される場合は、以下の原因と考えられる：</p>
+<ul>
+    <li>ヒントはまだ公表されてない。</li>
+    <li>Hash の計算が間違えた。</li>
+    <li>該当ステージの解答がすでに表示していた。これ以降のヒントはない。</li>
+</ul>
+<p>この手順をこのページでやってみて、最初ステージの答えをゲットしよう！</p>

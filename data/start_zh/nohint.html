@@ -1,0 +1,37 @@
+<h1>如何获得提示？</h1>
+<p>根据游戏当前难度，每一关会提供不同数量的提示。</p>
+<p>获得提示的步骤如下</p>
+<ol>
+    <li>找到当前网页的源代码。</li>
+    <li>去掉除了数字、大小写 ABCDEF 之外的其他字符。</li>
+    <li>将剩下的字符当作是十六进制的数据。</li>
+    <li>数据长度为奇数的时候在后面补 <code>0</code>。</li>
+    <li>计算这段数据的 MD5 哈希值。</li>
+    <li>将该值用小写十六进制表示。</li>
+    <li>将得到的字符串当作「答案」即可获得提示。</li>
+</ol>
+<p>下面是一些可以计算提示哈希的工具：</p>
+<ul>
+    <li>将网页源代码放入<a
+            href="https://gchq.github.io/CyberChef/#recipe=Filter('Nothing%20(separate%20chars)','%5B0-9a-fA-F%5D',false)Conditional_Jump('%5E(..)%2B$',false,'Skip',10)Find_/_Replace(%7B'option':'Regex','string':'$'%7D,'0',true,false,true,false)Label('Skip')From_Hex('Auto')MD5()">此
+            CyberChef 脚本</a>的输入部分。</li>
+    <li>
+        在 macOS 终端中，将下面的链接替换成实际的网页链接，然后运行。
+        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5</code></pre>
+    </li>
+    <li>
+        在 (GNU/)Linux 终端中，将下面的链接替换成实际的网页链接，然后运行。
+        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5sum</code></pre>
+    </li>
+    <li>
+        在 PowerShell 终端中，将下面的链接替换成实际的网页链接，然后运行。
+        <pre><code>$d = (Invoke-WebRequest "<u>https://URL/answer</u>").Content -Replace "[^0-9a-fA-F]", ""; if ($d.Length % 2 -eq 1) {$d += "0"}; $d = $d -Split '(?<=\G..)(?=.)' | ForEach-Object {[byte]::Parse($_,'HexNumber')}; $d = New-Object System.IO.MemoryStream(, $d); (Get-FileHash -InputStream $d -Algorithm md5).Hash.ToLower()</code></pre>
+    </li>
+</ul>
+<p>记住，这些步骤可以用在所有关卡中获取初始提示和后续提示。如果你遇到了 404 错误，可能是由于以下原因：</p>
+<ul>
+    <li>提示尚未公开。</li>
+    <li>哈希值计算有误。</li>
+    <li>你已看到答案，没有后续提示。</li>
+</ul>
+<p>按照上面的步骤来寻找本页的提示，即可获得初始关卡的答案。</p>

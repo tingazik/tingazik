@@ -1,0 +1,118 @@
+⠼⠓⠀⠎⠊⠛⠀⠋⠊⠛
+8 sig fig
+
+⠸⠩ \{
+⠀ space
+// ⠐ baseline
+⠮ ∫
+⠰ subscript _
+⠤ -
+⠆ 2
+⠘ ^ superscript
+⠆ 2
+⠐ baseline
+⠷ (
+⠭ x
+⠘ ^
+⠒ 3
+⠐ baseline
+⠉⠕⠎ cos
+⠹ { fraction start
+⠭ x
+⠌ \over
+⠆ 2
+⠼ fraction end }
+⠬ +
+⠹ { fraction start
+⠂ 1
+⠌ \over
+⠆ 2
+⠼ fraction end }
+⠾ )
+⠜ √ {
+⠲ 4
+⠤ -
+⠭ x
+⠘ ^
+⠆ 2
+⠐ baseline
+⠻ root end }
+⠙⠭ dx
+⠀ space
+⠸⠱ \}
+
+\{ ∫_{-2}^{2} (x^3 \cos{x \over 2} + {1 \over 2}) √{4-x^2} dx \} 
+
+3_1415927
+
+https://www.youtube.com/watch?v=Q1575oHNYRo
+
+⠸⠩ \{
+⠀ space
+⠢ 5
+⠘ ^
+⠆ 2
+⠬ +
+⠆ 2
+⠭ x
+⠐ baseline
+⠈⠡ \times
+⠢ 5
+⠘ ^
+⠂ 1
+⠦ 8
+⠤ -
+⠂ 1
+⠖ 6
+⠭ x
+⠐ baseline
+⠀ space
+⠨⠅ =
+⠀ space
+⠢ 5
+⠘ ^
+⠂ 1
+⠲ 4
+⠭ x
+⠤ -
+⠂ 1
+⠐ baseline
+⠀ space
+⠸⠱ \}
+
+5^{2+2x} \times 5^{18-16x} = 5^{14x-1}
+x = 0.75
+0_75
+
+---
+
+⠼⠓⠀⠎⠊⠛⠀⠋⠊⠛
+8 sig fig
+
+⠸⠩ \{
+⠀ space
+⠔ 9
+⠜ \sqrt{
+⠂ 1
+⠂ 1
+⠻ end sqrt }
+⠈⠡ \times
+⠂ 1
+⠂ 1
+⠜ \sqrt{
+⠶ 7
+⠻ end sqrt }
+⠀ space
+⠸⠱ \}
+
+9\sqrt{11} \times 11\sqrt{7} = 99\sqrt{77} = 868.72147
+
+868_72147
+
+⠼
+⠲⠲⠆ 442
+⠨⠌ \divide
+⠂⠒ 13
+
+442/13 = 34
+34
