@@ -159,6 +159,10 @@ if __name__ == "__main__":
     for i in levels:
         render_difficulty(i, f"{i}/")
 
+    ## render 404
+    with (out_dir / "404.html").open("w") as f:
+        f.write("<!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1><p>That’s probably a wrong answer.</p></body></html>")
+
     ## render difficulties index
     levels_list = "<ol>\n"
     for i in levels:
