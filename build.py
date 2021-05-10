@@ -7,9 +7,11 @@ import hashlib
 import re
 import minify_html
 import shutil
+import json
 
 out_dir = Path("out/")
 debug_menu = "ddeebbuuggmmeennuuu"
+path_mapping = {}
 
 with open("stages.yaml") as f:
     data = yaml.load(f, Loader=yaml.SafeLoader)
@@ -62,6 +64,9 @@ def render(template: Template, stage: str, difficulty: str, name: str, filename:
     with (p / "index.html").open("w") as f:
         f.write(result)
     
+    global path_mapping
+    path_mapping[filename.strip("/")] = f"{stage} {difficulty}"
+
     return new_hash
 
 
@@ -74,6 +79,9 @@ def render_index(p: Path, min_difficulty: str):
         result = minify_html.minify(result, minify_js=True, minify_css=True)
         with (p / "index.html").open("w") as f:
             f.write(result)
+
+    global path_mapping
+    path_mapping[str(p.relative_to(out_dir)).strip("/")] = f"index {min_difficulty}"
 
 
 def clean_up():
@@ -152,6 +160,9 @@ def render_debug_menu(mapping, path, difficulties):
     with (p / "index.html").open("w") as f:
         f.write(result)
 
+    global path_mapping
+    path_mapping[str(p.relative_to(out_dir)).strip("/")] = f"debug menu {difficulties[-1]}"
+
 
 if __name__ == "__main__":
     clean_up()
@@ -180,3 +191,6 @@ if __name__ == "__main__":
 
     with (out_dir / "index.html").open("w") as f:
         f.write(result)
+
+    with open("mapping.json", "w") as f:
+        json.dump(path_mapping, f)
