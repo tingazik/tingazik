@@ -192,5 +192,7 @@ if __name__ == "__main__":
     with (out_dir / "index.html").open("w") as f:
         f.write(result)
 
+    shutil.copyfile("templates/social.png", "out/social.png")
+
     with open("mapping.json", "w") as f:
         json.dump(path_mapping, f)
