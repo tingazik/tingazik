@@ -1,5 +1,7 @@
 # Tìngäzìk
 
+![Banner](templates/social.png)
+
 Source for _Tìngäzìk: (Probably Not) the World’s Kindest Online Puzzle Game_.
 
 ## Build
