@@ -193,6 +193,7 @@ if __name__ == "__main__":
         f.write(result)
 
     shutil.copyfile("templates/social.png", "out/social.png")
+    shutil.copyfile("templates/robots.txt", "out/robots.txt")
 
     with open("mapping.json", "w") as f:
         json.dump(path_mapping, f)
