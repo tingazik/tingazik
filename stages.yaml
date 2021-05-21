@@ -35,7 +35,7 @@ stages:
   answer: this_pdf_is_not_that_pdf
 - name: hentaigana  # unicode
   answer: ronosekiwo
-- name: unicat  # unicode
+- name: unicat  # unicode 
   answer: SmLoLlNdSoNdScLlNlLoLu
 - name: numero  # unicode?
   answer: "_47932_48"
@@ -44,7 +44,7 @@ stages:
 - name: pikachu_cry  # morse # pokemon
   answer: pikachu
 - name: pikachu_english  # pokemon
-  answer: congratulations
+  answer: incomprehensible
 - name: decompress  # pokemon
   answer: Henceforth
 - name: lenavi_table  # navi
