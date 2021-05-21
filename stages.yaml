@@ -51,8 +51,10 @@ stages:
   answer: mrrvomum
 - name: lifya_lenavi  # navi # conlang
   answer: to_be_or_not_to_be_that_is_the_question
-- name: solresol  # conlang
+- name: solresol  # conlang # music
   answer: never_gonna_give_you_up_never_gonna_let_you_down
+- name: daniwell
+  answer: Nyanyanyanyanyanyanya_
 - name: xsampa  # english
   answer: circumstances
 - name: google_ja_apr1
