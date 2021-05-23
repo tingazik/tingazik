@@ -59,17 +59,17 @@ stages:
   answer: circumstances
 - name: google_ja_apr1
   answer: m9
-- name: ivs  # chinese # unicode
-  answer: "2021_02_12"
-- name: unkyouonji  # chinese # japanese
-  answer: ta1men2suo3you3de0she4bei4he2yi2qi4fang3fu2dou1shi4you3sheng1ming4de0
-- name: nobashibou  # japanese
-  answer: user_interface
 - name: heiti
   answer: PingFang_SC
+- name: ivs  # chinese # unicode
+  answer: "2021_02_12"
+- name: nobashibou  # japanese
+  answer: user_interface
 - name: iconify  # hard
   answer: ic_octicon_fa_fluent_twemoji
 - name: cosmo  # hard
   answer: "302029"
+- name: unkyouonji  # chinese # japanese
+  answer: ta1men2suo3you3de0she4bei4he2yi2qi4fang3fu2dou1shi4you3sheng1ming4de0
 - name: congrats
   answer: null
