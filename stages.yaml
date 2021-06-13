@@ -1,5 +1,26 @@
 # difficulty: nohint
 difficulty: answer
+dummies:
+- "235"  # 0
+- "131"
+- "79"
+- "236"
+- "421"
+- "229223"  # 6
+- "7174"
+- "21145"
+- "314793"
+- "533699"
+- "official"  # 11
+- "silk"
+- "abstract"
+- "safari"
+- "genetic"
+- "action"
+- "network"
+- "background"
+- "fan"
+- "integrity"  # 19
 stages:
 - name: start_en
   answer: first

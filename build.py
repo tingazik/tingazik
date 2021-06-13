@@ -93,6 +93,25 @@ def clean_up():
         else:
             p.unlink()
 
+def render_dummies(prefix: str = ""):
+    for idx, name in enumerate(data["dummies"]):
+        with open(f"data/dummies/{idx}.html") as f:
+            content = f.read()
+        footer = f"{name} {sha1_str(name)}".upper()
+
+        result = template.render(content=content, footer=footer, title=name)
+        result = minify_html.minify(result, minify_js=True, minify_css=True)
+
+        filename = prefix + name
+        p = out_dir / filename
+        if not p.exists():
+            p.mkdir(parents=True)
+        with (p / "index.html").open("w") as f:
+            f.write(result)
+        
+        global path_mapping
+        path_mapping[filename.strip("/")] = f"dummy #{idx} {name}"
+
 def render_difficulty(min_difficulty: str, prefix: str = ""):
     mapping = defaultdict(dict)
 
@@ -136,6 +155,7 @@ def render_difficulty(min_difficulty: str, prefix: str = ""):
 
     render_index(out_dir / prefix, min_difficulty)
     render_debug_menu(mapping, out_dir / prefix, difficulties)
+    render_dummies(prefix)
 
 ## Render debug menu
 def render_debug_menu(mapping, path, difficulties):
@@ -146,8 +166,18 @@ def render_debug_menu(mapping, path, difficulties):
             if j in im:
                 table += f'<td><a href="../{im[j]}">{j}</a></td>'
             else:
-                table += f'<td><del>{j}</a></del>'
+                table += f'<td><del>{j}</del></td>'
         table += "</tr>\n"
+    
+    for idx, name in enumerate(data["dummies"]):
+        table += f"<tr><th>dummy #{idx}</th>"
+        for j in range(len(difficulties)):
+            if j == 0:
+                table += f'<td><a href="../{name}">{name}</a></td>'
+            else:
+                table += f'<td></td>'
+        table += "</tr>\n"
+    
     table += "</table>"
 
     title = "DEBUG MENU"
