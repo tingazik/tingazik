@@ -21,6 +21,7 @@ dummies:
 - "background"
 - "fan"
 - "integrity"  # 19
+- "solve"
 stages:
 - name: start_en
   answer: first
