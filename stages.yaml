@@ -15,7 +15,9 @@ stages:
   answer: turing_machine
 - name: 3pluswhat
   answer: 8G2J2H9H
-- name: cannot_say_cannot_say_turn # math
+- name: tonguess
+  answer: QUIZ
+- name: cannot_say_cannot_say_turn # math # chinese
   answer: "69324642199981295394350956544"
 - name: nogoubei  # medium # chinese
   answer: 7CA4
