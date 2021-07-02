@@ -157,7 +157,7 @@ def render_difficulty(min_difficulty: str, prefix: str = ""):
         last_answer = answer
 
     render_index(out_dir / prefix, min_difficulty)
-    render_debug_menu(mapping, out_dir / prefix, difficulties)
+    # render_debug_menu(mapping, out_dir / prefix, difficulties)
     render_dummies(prefix)
 
 ## Render debug menu
