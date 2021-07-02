@@ -17,15 +17,15 @@
             CyberChef レシピー</a>の入力欄にコピペする。</li>
     <li>
         macOS shell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
-        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5</code></pre>
+        <pre><code>curl <u>https://example.com/page</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5</code></pre>
     </li>
     <li>
         (GNU/)Linux shell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
-        <pre><code>curl <u>https://URL/answer</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5sum</code></pre>
+        <pre><code>curl <u>https://example.com/page</u> | sed 's/[^0-9a-fA-F]//g' | tr -d '\n' | awk '{print (length % 2 == 0 ? $1 : $1 "0")}' | xxd -r -p | md5sum</code></pre>
     </li>
     <li>
         PowerShell で、下記コマンドの中の URL を実際の URL に変え、コマンドを実行する。
-        <pre><code>$d = (Invoke-WebRequest "<u>https://URL/answer</u>").Content -Replace "[^0-9a-fA-F]", ""; if ($d.Length % 2 -eq 1) {$d += "0"}; $d = $d -Split '(?<=\G..)(?=.)' | ForEach-Object {[byte]::Parse($_,'HexNumber')}; $d = New-Object System.IO.MemoryStream(, $d); (Get-FileHash -InputStream $d -Algorithm md5).Hash.ToLower()</code></pre>
+        <pre><code>$d = (Invoke-WebRequest "<u>https://example.com/page</u>").Content -Replace "[^0-9a-fA-F]", ""; if ($d.Length % 2 -eq 1) {$d += "0"}; $d = $d -Split '(?<=\G..)(?=.)' | ForEach-Object {[byte]::Parse($_,'HexNumber')}; $d = New-Object System.IO.MemoryStream(, $d); (Get-FileHash -InputStream $d -Algorithm md5).Hash.ToLower()</code></pre>
     </li>
 </ul>
 <p>注意：この手順は全ステージの最初ヒントと追加ヒントをゲットすることができる。

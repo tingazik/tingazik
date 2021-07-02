@@ -85,12 +85,15 @@ def render_index(p: Path, min_difficulty: str):
 
 
 def clean_up():
-    paths = glob(f"{out_dir}/*")
+    paths = glob(f"{out_dir}/*", recursive=True)
+    print(paths)
     for path in paths:
         p = Path(path)
         if p.is_dir():
+            print("Remove dir", p)
             shutil.rmtree(p)
         else:
+            print("Remove file", p)
             p.unlink()
 
 def render_dummies(prefix: str = ""):
@@ -194,16 +197,7 @@ def render_debug_menu(mapping, path, difficulties):
     path_mapping[str(p.relative_to(out_dir)).strip("/")] = f"debug menu {difficulties[-1]}"
 
 
-if __name__ == "__main__":
-    clean_up()
-    levels = ["nohint", "1sample", "3samples", "keywords", "solution", "answer"]
-    for i in levels:
-        render_difficulty(i, f"{i}/")
-
-    ## render 404
-    with (out_dir / "404.html").open("w") as f:
-        f.write("<!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1><p>That’s probably a wrong answer.</p></body></html>")
-
+def render_difficulty_index():
     ## render difficulties index
     levels_list = "<ol>\n"
     for i in levels:
@@ -221,6 +215,19 @@ if __name__ == "__main__":
 
     with (out_dir / "index.html").open("w") as f:
         f.write(result)
+
+
+if __name__ == "__main__":
+    clean_up()
+    # levels = ["nohint", "1sample", "3samples", "keywords", "solution", "answer"]
+    # for i in levels:
+    #     render_difficulty(i, f"{i}/")
+
+    render_difficulty(data["difficulty"], "")
+
+    ## render 404
+    with (out_dir / "404.html").open("w") as f:
+        f.write("<!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1><p>That’s probably a wrong answer.</p></body></html>")
 
     shutil.copyfile("templates/social.png", "out/social.png")
     shutil.copyfile("templates/robots.txt", "out/robots.txt")

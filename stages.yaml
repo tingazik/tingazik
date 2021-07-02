@@ -1,5 +1,5 @@
-# difficulty: nohint
-difficulty: answer
+difficulty: nohint
+# difficulty: answer
 dummies:
 - "235"  # 0
 - "131"
