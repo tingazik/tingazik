@@ -1,4 +1,4 @@
-difficulty: nohint
+difficulty: 1sample
 # difficulty: answer
 dummies:
 - "235"  # 0
@@ -7,7 +7,7 @@ dummies:
 - "236"
 - "421"
 - "229223"  # 6
-- "7174"
+- "2021"
 - "21145"
 - "314793"
 - "533699"
