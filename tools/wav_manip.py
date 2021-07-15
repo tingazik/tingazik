@@ -1,7 +1,19 @@
 #%% pip3 install bitstring
+
+# <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US" xmlns:mstts="https://www.w3.org/2001/mstts">
+# <voice name="en-US-AriaNeural">
+# <mstts:express-as style="chat">
+# <prosody rate="-10.00%" volume="+50.00%">incomprehensible</prosody>
+# </mstts:express-as>
+# </voice>
+# </speak>
+
+# spx synthesize --file text.ssml --audio output canyourepeat.wav
+# ffmpeg -i canyourepeat.wav -c:a pcm_u8 -ar 8000 repeat.wav
+
 import io
 import struct
-base = "/Users/blueset/repeat"
+base = "/Users/blueset/Downloads/morse"
 f = open(base + ".wav", "rb").read()
 bio = io.BytesIO(f)
 # %%
