@@ -68,7 +68,7 @@ stages:
 - name: pikachu_cry  # morse # pokemon
   answer: pikachu
 - name: pikachu_english  # pokemon
-  answer: incomprehensible
+  answer: congratulations
 - name: decompress  # pokemon
   answer: Henceforth
 - name: lenavi_table  # navi
