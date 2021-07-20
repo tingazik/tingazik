@@ -72,7 +72,7 @@ stages:
 - name: decompress  # pokemon
   answer: Henceforth
 - name: lenavi_table  # navi
-  answer: mrrvomum
+  answer: mrrvomun
 - name: lifya_lenavi  # navi # conlang
   answer: to_be_or_not_to_be_that_is_the_question
 - name: solresol  # conlang # music
