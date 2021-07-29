@@ -1,4 +1,4 @@
-difficulty: 3samples
+difficulty: keywords
 # difficulty: answer
 dummies:
 - "235"  # 0
@@ -30,7 +30,7 @@ stages:
 - name: start_zh
   answer: first
 - name: roman  # easy
-  answer: "400"
+  answer: "`400"
 - name: barcode  # easy
   answer: cascade
 - name: bf
