@@ -150,6 +150,7 @@ def render_difficulty(min_difficulty: str, prefix: str = ""):
         for d in diff:
             if (path / f"{d}.html").exists():
                 mapping[name][d] = last_hash
+
                 last_hash = render(template, name, d, f"{filename}_{d}", prefix + last_hash)
             else:
                 print((path / f"{d}.html"), "doesn’t exist.")
@@ -157,7 +158,7 @@ def render_difficulty(min_difficulty: str, prefix: str = ""):
         last_answer = answer
 
     render_index(out_dir / prefix, min_difficulty)
-    # render_debug_menu(mapping, out_dir / prefix, difficulties)
+    render_debug_menu(mapping, out_dir / prefix, difficulties)
     render_dummies(prefix)
 
 ## Render debug menu
@@ -217,6 +218,55 @@ def render_difficulty_index():
         f.write(result)
 
 
+def render_archive():
+    for stage in data["stages"]:
+        stage_name = stage["name"]
+        segments = {
+            "nohint": "",
+            "1sample": "",
+            "3samples": "",
+            "keywords": "",
+            "solution": "",
+            "answer": "",
+            "startanswer": "",
+        }
+
+        for d in segments:
+            path = Path(f"data/{stage_name}")
+            if (path / f"{d}.html").exists():
+                with open(f"data/{stage_name}/{d}.html") as f:
+                    segments[d] = f.read()
+            else:
+                print((path / f"{d}.html"), "doesn’t exist.")
+        
+        html = ""
+        if segments["nohint"]:
+            html += segments["nohint"]
+        if segments["1sample"]:
+            html += "\n<hr>\n"
+            html += segments["1sample"]
+        if segments["3samples"]:
+            html += "\n<hr>\n"
+            html += segments["3samples"]
+        if segments["keywords"]:
+            html += "\n<hr>\n"
+            html += segments["keywords"]
+        if segments["solution"]:
+            html += "\n<hr>\nSolution: <br>\n"
+            html += segments["solution"]
+        if segments["answer"]:
+            html += "\n<hr>\nAnswer: "
+            html += segments["answer"]
+        if segments["startanswer"]:
+            html += "\n<hr>\n"
+            html += segments["startanswer"]
+        p = out_dir / "archive" / stage_name
+        if not p.exists():
+            p.mkdir(parents=True)
+        with (p / "index.html").open("w") as f:
+            result = template.render(content=html, footer=f"Archive of {stage_name}", title=f"Tìngäzìk archive of {stage_name}")
+            f.write(result)
+
 if __name__ == "__main__":
     clean_up()
     # levels = ["nohint", "1sample", "3samples", "keywords", "solution", "answer"]
@@ -231,6 +281,7 @@ if __name__ == "__main__":
 
     shutil.copyfile("templates/social.png", "out/social.png")
     shutil.copyfile("templates/robots.txt", "out/robots.txt")
+    render_archive()
 
     with open("mapping.json", "w") as f:
         json.dump(path_mapping, f)
