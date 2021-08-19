@@ -3,6 +3,7 @@ from glob import glob
 from pathlib import Path
 from jinja2 import Template
 from collections import defaultdict
+from datetime import datetime
 import hashlib
 import re
 import minify_html
@@ -73,9 +74,13 @@ def render(template: Template, stage: str, difficulty: str, name: str, filename:
 def render_index(p: Path, min_difficulty: str):
     if not p.exists():
         p.mkdir()
+
+    for i in data["leaderboard"]:
+        i["time"] = datetime.strptime(i["time"], "%m/%d/%Y  %I:%M:%S %p")
+
     with open("index.html") as f:
         index_template = Template(f.read())
-        result = index_template.render(difficulty=min_difficulty)
+        result = index_template.render(difficulty=min_difficulty, leaderboard=data["leaderboard"])
         result = minify_html.minify(result, minify_js=True, minify_css=True)
         with (p / "index.html").open("w") as f:
             f.write(result)

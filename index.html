@@ -190,12 +190,49 @@
         <a href="start_en" lang="en"><button>Get started!</button></a>
         <a href="start_zh" lang="zh"><button>开始！</button></a>
         <a href="start_ja" lang="ja"><button>スタート！</button></a>
+        <details>
+            <summary>
+                <h2 lang="en">Leaderboard</h2>
+                <h2 lang="ja">ランキング</h2>
+                <h2 lang="zh">英雄榜</h2>
+            </summary>
+            <ol>
+                {% for i in leaderboard %}<li><a href="{{ i.web }}">{{ i.name }}</a> @<time>{{ i.time.isoformat() }}Z</time></li>{% endfor %}
+            </ol>
+        </details>
+        <details>
+            <summary>
+                <span lang="en">Spoiler alert</span>
+                <span lang="ja">ネタバレ注意</span>
+                <span lang="zh">剧透警告</span>
+            </summary>
+            <ul>
+                <li><a href="https://github.com/tingazik/tingazik">
+                    <span lang="en">Source code</span>
+                    <span lang="ja">ソースコード</span>
+                    <span lang="zh">源代码</span>
+                </a></li>
+                <li><a href="https://blog.1a23.com/tag/tingazik/">
+                    <span lang="en">Retrospective</span>
+                    <span lang="ja">振り返り</span>
+                    <span lang="zh">回忆录</span>
+                </a></li>
+            </ul>
+        </details>
         <hr>
         <small><i>
             Inspired by <a href="https://clang.pp.ua/">Project NANO</a>, 
             and all other games in a similar format.
         </i></small>
     </vstack>
+    <script>
+        const time = document.querySelectorAll("time");
+        time.forEach(t => {
+            var date = t.innerText;
+            t.dateTime = date;
+            t.innerText =`${new Date(date).toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
+        });
+    </script>
 </body>
 
 </html>

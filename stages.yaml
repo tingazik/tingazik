@@ -1,5 +1,4 @@
-difficulty: solution
-# difficulty: answer
+difficulty: answer
 dummies:
 - "235"  # 0
 - "131"
@@ -61,9 +60,9 @@ stages:
   answer: ronosekiwo
 - name: unicat  # unicode 
   answer: SmLoLlNdSoNdScLlNlLoLu
-- name: numero  # unicode?
+- name: numero  # unicode
   answer: "_47932_48"
-- name: hajimetenooto  # morse
+- name: hajimetenooto  # morse # vocaloid
   answer: HAJIMETENOOTO
 - name: pikachu_cry  # morse # pokemon
   answer: pikachu
@@ -77,7 +76,7 @@ stages:
   answer: to_be_or_not_to_be_that_is_the_question
 - name: solresol  # conlang # music
   answer: never_gonna_give_you_up_never_gonna_let_you_down
-- name: daniwell
+- name: daniwell  # music # vocaloid
   answer: Nyanyanyanyanyanyanya_
 - name: xsampa  # english
   answer: circumstances
@@ -91,9 +90,19 @@ stages:
   answer: user_interface
 - name: iconify  # hard
   answer: ic_octicon_fa_fluent_twemoji
-- name: cosmo  # hard
+- name: cosmo  # hard # vocaloid
   answer: "302029"
 - name: unkyouonji  # chinese # japanese
   answer: ta1men2suo3you3de0she4bei4he2yi2qi4fang3fu2dou1shi4you3sheng1ming4de0
 - name: congrats
   answer: null
+leaderboard:
+- name: COL, Fivero, Golden, Kizurin, Musicraft, 血纹21
+  web: mailto:2418286836@qq.com
+  time: 7/25/2021  4:06:34 AM
+- name: col，golden，kizurin,血纹21，musicraft,fivero
+  web: mailto:1429961713@qq.com
+  time: 7/25/2021  4:13:26 AM
+- name: pcmU
+  web: mailto:test@gmail.com
+  time: 7/30/2021  6:31:26 AM
