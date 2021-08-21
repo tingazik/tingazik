@@ -1,7 +1,7 @@
-text = """new unicode characters usually not installed but looks like something else
-unicode grid to qr code
-hentaigana
-unicode character categories
+text = """morse code in binary to hex feat. retro game explained video
+same thing but in speech
+pokémon gen 1 compression
+multiplication table in na’vi
 """
 rows = ["qwfpgjluy", "arstdhneio", "zxcvbkm", "1234567890"]
 
