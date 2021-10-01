@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <meta name="darkreader" content="ALREADY-DARK" />
+    <title>Tìngäzìk archive of numero</title>
+    <link rel="stylesheet" media="(prefers-color-scheme: light)"
+        href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge-light.css" />
+    <link rel="stylesheet" media="(prefers-color-scheme: dark), (prefers-color-scheme: none)"
+        href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge-dark.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/swlkr/ridgecss@0.2.0/ridge.css" />
+</head>
+
+<body>
+    <vstack spacing="s">
+        <p>Question: <span lang="ee">ee: akpe blaene vɔ adre alafa asieke blaetɔ̃ vɔ eve kple kakɛ ene enyi xlẽyimegbee</span></p>
+<hr>
+<p>Sample: <span lang="chr">chr: ꮠꮼ ꭲꮿꭶᏼꮅ ꮶꭲ ꮝꭺꭿꮵꮖ ꮕꭹꮝꭺ ꭿꮝꭹ ꭺꮝꮣᏹ ꮡꮣꮅ ꭶꮅꮙꭹ</span></p>
+<p>Answer: <code>1345_67</code></p>
+<hr>
+<p>Sample: <span lang="zh-hant">zh-hant: 一億四千九百五十九萬七千八百七十點七</span></p>
+<p>Answer: <code>149597870_7</code></p>
+
+<p>Sample: <span lang="en">en: minus four hundred thirty</span></p>
+<p>Answer: <code>_430</code></p>
+<hr>
+<p>Keywords: number, language, ICU</p>
+<hr>
+Solution: <br>
+<ol>
+    <li>Write down the number in the question into numerals. <small>If you can’t understand the language, try figure it out from localization tools like the <em>International Components for Unicode</em>.</small></li>
+    <li>Change decimal point and minus sign to <code>_</code>.</li>
+</ol>
+<hr>
+Answer: <code>_47932_48</code>
+        <hr />
+        <footer><code>Archive of numero</code></footer>
+    </vstack>
+</body>
+
+</html>
